@@ -41,7 +41,6 @@ export default {
                     username: data.username,
                     password: data.password,
                 },
-                xhrFields: {withCredentials: true},
                 success(resp) {
                     if (resp.error_message === "success") {
                         localStorage.setItem("jwt_token", resp.token);
@@ -52,7 +51,7 @@ export default {
                     }
                 },
                 error(resp) {
-                    data &&   data.error(resp);
+                    data.error(resp);
                 }
             });
         },
@@ -63,7 +62,6 @@ export default {
                 headers: {
                     Authorization: "Bearer " + context.state.token,
                 },
-                xhrFields: {withCredentials: true},
                 success(resp) {
                     if (resp.error_message === "success") {
                         context.commit("updateUser", {
@@ -76,7 +74,7 @@ export default {
                     }
                 },
                 error(resp) {
-                    data &&   data.error(resp);
+                    data.error(resp);
                 }
             })
         },
