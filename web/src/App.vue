@@ -16,7 +16,7 @@ export default {
 
 
     // $.ajax({
-    //   url: "http://127.0.0.1:3000/user/account/register/",
+    //   url: "https://app3216.acapp.acwing.com.cn/api/user/account/register/",
     //   type: "post",
     //   data: {
     //     username: "yxc2",
